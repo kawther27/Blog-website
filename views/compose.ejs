@@ -1,5 +1,29 @@
 <%- include("partials/header.ejs") %>
-<form action="/submit" method="post">
-    <input type="submit" >
-</form>
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 shadow-lg p-4 mb-5 bg-body rounded">
+            <h1 class="cool-title">💡 Create. Express. Inspire.</h1>
+            <form action="/compose" method="post" enctype="multipart/form-data" id="composeForm">
+                <div class="mb-3">
+                    <input type="text" class="form-control" id="postTitle" name="postTitle" placeholder="Enter post title" required>
+                </div>
+                <div class="mb-3">
+                    <textarea class="form-control" id="postContent" name="postContent" rows="5" placeholder="Write your post content here" required></textarea>
+                </div>
+                <div class="mb-3">
+                    <select class="form-control" id="postCategory" name="postCategory" required>
+                        <option value="" disabled selected>Select a category</option>
+                        <option value="Fashion">Fashion</option>
+                        <option value="Healthy Lifestyle">Healthy Lifestyle</option>
+                        <option value="Coding Journey">Coding Journey</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <input type="file" class="form-control" id="postImage" name="postImage" accept="image/*" required>
+                </div>
+                <button type="submit" class="fancy-btn w-100">Publish</button>
+            </form>
+        </div>
+    </div>
+</div>
 <%- include("partials/footer.ejs") %>

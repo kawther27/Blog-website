@@ -4,13 +4,18 @@ import bodyParser from "body-parser";
 //creating the server
 const app = express();
 const port =3000;
+const posts=[];
+
 
 //adding middelware and modules
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static("public"));
 
 
+
+
 // =============== ROUTES SETUP ===============//
+
 //Home Page - Show all posts
 app.get("/",(req,res)=>{
     
@@ -25,6 +30,16 @@ app.get("/compose",(req,res)=>{
 
 //handle new Post Submission
 app.post("/compose",(req,res)=>{
+     const post={
+        title : req.body.postTitle,
+        content : req.body.postContent, 
+        category : req.body.postCategory
+     }
+   
+     //saving the new posts
+     posts.push(post)
+     
+
     //logic to save a new post
 res.redirect("/");
 });

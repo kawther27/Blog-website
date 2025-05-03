@@ -1,0 +1,98 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 1030; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  }
+
+  body {
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #DAC1B1 ,#ECE9D5 ,#ab8c77 ); 
+    color: #333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+main {
+    flex: 1; 
+    margin-top: 10px;
+  }
+  
+  /* style footer*/
+.footer {
+  
+    text-align: center;
+    padding: 10px 0;
+    background: linear-gradient(to right, #DAC1B1 ,#ECE9D5 ,#ab8c77 ); 
+    font-family: 'Playfair Display', serif;
+  }
+.footer a {
+    color: #000;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
+  
+
+  .social-icons a {
+    border: 1.5px solid black;
+    border-radius: 50%;
+    padding: 8px;
+    margin: 0 5px;
+    display: inline-block;
+    transition: all 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    background-color: black;
+    color: white;
+  }
+
+    /* #######  end of footer style ######## */
+
+
+  /* style for the title in create post page*/
+  .cool-title {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 2rem;
+    color: #444;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+    animation: fadeIn 1s ease-out;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  /* #######  end of title style ######## */
+
+  
+
+/* style for the submit button in create post page*/
+  .fancy-btn {
+    background: linear-gradient(to right, #a93621,#a3826c,#ab8c77, #65160f);
+    color: #fff;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 12px;
+    border: none;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .fancy-btn:hover {
+    background: linear-gradient(to right, #a93621,#a3826c,#ab8c77, #65160f);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+   /* #######  end of submit button  style ######## */
+  
