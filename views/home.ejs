@@ -1,9 +1,41 @@
 <%- include("partials/header.ejs") %>
- <h1>My blogs</h1>
- <div class="card mb-3">
-    <div class="card-body">
-     
+
+<div class="container mt-5">
+    <h1 class="text-center">All Posts</h1>
+    <div class="row">
+        <% if (posts.length > 0) { %>
+            <% posts.forEach((post) => { %>
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm position-relative">
+                        <% if (post.image) { %>
+                            <img src="<%= post.image %>" class="card-img-top" alt="<%= post.title %>">
+                        <% } %>
+                        <div class="card-body">
+                            <h5 class="card-title"><%= post.title %></h5>
+                            <p class="card-text"><%= post.content.substring(0, 100) %>...</p>
+                            <p class="text-muted"><strong>Category:</strong> <%= post.category %></p>
+                        </div>
+
+                       <!-- Edit and Delete Buttons -->
+                     <div class="position-absolute top-0 start-0 p-2">
+                     <!-- Edit Button -->
+                     <a href="/edit/<%= post.id %>" class="btn btn-sm edit-btn me-2" title="Edit Post">
+                     <i class="bi bi-pencil"></i> 
+                     </a>
+                    <!-- Delete Button -->
+                   <form action="/delete/<%= post.id %>" method="POST" class="d-inline">
+                    <button type="submit" class="btn btn-sm delete-btn" title="Delete Post">
+                        <i class="bi bi-trash"></i> 
+                    </button>
+                      </form>
+                     </div>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p class="text-center">No posts available. <a href="/compose">Create one now!</a></p>
+        <% } %>
     </div>
-  </div>
-  
+</div>
+
 <%- include("partials/footer.ejs") %>

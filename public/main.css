@@ -96,3 +96,80 @@ main {
   }
    /* #######  end of submit button  style ######## */
   
+
+
+  /* style for the home page*/
+  .home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(to right, #DAC1B1 ,#ECE9D5 ,#ab8c77 ); 
+    color: #333;
+    font-family: Arial, sans-serif;
+  }
+  .home-page h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-align: center;
+    animation: fadeIn 1s ease-out;
+  }
+ 
+  /* #######  end of home page style ######## */
+
+  /* style for the post card*/
+  .post-card {
+    background: linear-gradient(to right, #DAC1B1 ,#ECE9D5 ,#ab8c77 ); 
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .post-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+   /* Position the icons in the top-left corner of the card */
+.card .position-absolute {
+  z-index: 10;
+}
+
+/* Edit Button Styling */
+.edit-btn {
+  background-color: #DAC1B1; /* Light beige tone */
+  color: #444; /* Dark text color */
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+  background-color: #ab8c77; /* Darker beige tone */
+  color: white;
+}
+
+/* Delete Button Styling */
+.delete-btn {
+  background-color: #ECE9D5; /* Light cream tone */
+  color: #444; /* Dark text color */
+  border: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.delete-btn:hover {
+  background-color: #ab8c77; /* Darker beige tone */
+  color: white;
+}
+
+/* Style for post images on the home page */
+.card-img-top {
+  width: 100%; /* Make the image responsive */
+  height: 200px; /* Set a fixed height */
+  object-fit: cover; /* Crop the image to fit the dimensions */
+  border-radius: 5px; /* Optional: Add rounded corners */
+}

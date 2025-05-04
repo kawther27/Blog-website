@@ -1,0 +1,37 @@
+<%- include("partials/header.ejs") %>
+
+<div class="container mt-5">
+    <h1 class="text-center cool-title">Edit Post</h1>
+    <form action="/edit/<%= post.id %>" method="POST" enctype="multipart/form-data">
+        <div class="mb-3">
+            <input type="text" class="form-control" name="postTitle" value="<%= post.title %>" required>
+        </div>
+        <div class="mb-3">
+            <textarea class="form-control" name="postContent" rows="5" required><%= post.content %></textarea>
+        </div>
+        <div class="mb-3">
+            <select class="form-control" name="postCategory" required>
+                <option value="Fashion" <%= post.category === "Fashion" ? "selected" : "" %>>Fashion</option>
+                <option value="Healthy Lifestyle" <%= post.category === "Healthy Lifestyle" ? "selected" : "" %>>Healthy Lifestyle</option>
+                <option value="Coding Journey" <%= post.category === "Coding Journey" ? "selected" : "" %>>Coding Journey</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label for="currentImage">Current Image:</label>
+            <div>
+                <% if (post.image) { %>
+                    <img src="<%= post.image %>" alt="Current Image" class="img-thumbnail" style="max-width: 200px;">
+                <% } else { %>
+                    <p>No image uploaded.</p>
+                <% } %>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="postImage">Upload New Image (optional):</label>
+            <input type="file" class="form-control" id="postImage" name="postImage" accept="image/*">
+        </div>
+        <button type="submit" class="fancy-btn">Update Post</button>
+    </form>
+</div>
+
+<%- include("partials/footer.ejs") %>
