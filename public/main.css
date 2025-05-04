@@ -168,8 +168,9 @@ main {
 
 /* Style for post images on the home page */
 .card-img-top {
-  width: 100%; /* Make the image responsive */
-  height: 200px; /* Set a fixed height */
-  object-fit: cover; /* Crop the image to fit the dimensions */
-  border-radius: 5px; /* Optional: Add rounded corners */
+  width: 100%; 
+  height: 200px; 
+  object-fit: contain; 
+  border-radius: 5px; 
+  background-color: #f8f8f8; 
 }
